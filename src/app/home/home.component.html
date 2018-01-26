@@ -1,3 +1,24 @@
-<p>
-  home works!
-</p>
+<form action="">
+    <label for="company-name">Company Name</label>
+    <input id="company-name" name="name" type="text" [(ngModel)]="company.name" />
+
+    <label for="company-phone">Company Phone</label>
+    <input id="company-phone" name="phone" type="tel" [(ngModel)]="company.phone" />
+
+    <label for="company-email">Company Email</label>
+    <input id="company-email" name="email" type="email" [(ngModel)]="company.email" />
+
+    <label for="company-website">Company Website</label>
+    <input id="company-website" name="website" type="url" [(ngModel)]="company.url" />
+
+    <label for="company-notes">Company Notes</label>
+    <textarea id="company-notes" name="notes" cols="30" rows="10" [(ngModel)]="company.notes"></textarea>
+
+    {{company.name}}
+    {{company.phone}}
+    {{company.email}}
+    {{company.url}}
+    {{company.notes}}
+
+  <input type="submit" value="submit" (click)="addItem()" />
+</form>
