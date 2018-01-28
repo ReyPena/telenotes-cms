@@ -8,6 +8,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { StoreModule } from '@ngrx/store';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatToolbarModule,
     FormsModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}),

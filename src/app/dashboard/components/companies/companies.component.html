@@ -1,18 +1,31 @@
 <div class="row">
   <mat-card class="card" *ngFor="let company of companies">
     <mat-card-header>
+      <div mat-card-avatar class="image"><!--TODO: Add placeholder--></div>
       <mat-card-title>{{ company.CompanyName }}</mat-card-title>
-      <mat-card-subtitle> Company id: {{ company.CompanyID }} - Acount id: {{ company.AccountId }}</mat-card-subtitle>
+      <mat-card-subtitle>
+        <ng-template [ngIf]="company.webSite">
+          <p>Website: <a href="{{ company.webSite }}" target="_blank">{{ company.webSite }}</a></p>
+        </ng-template>
+      </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      {{ company.StreetAddress }}
-      {{ company.StreetAddress2 }}
-      {{ company.City }} {{ company.State }}, {{ company.ZipCode }}
-      {{ company.Country }}
+      <p>
+        <b>Company id:</b> {{ company.CompanyID }} <br>
+        <b>Account id:</b> {{ company.AccountId }}
+      </p>
 
-      {{ company.webSite }}
-      {{ company.status }}
-      {{ company.Type }}
+      <b>Address</b>
+      <address>
+        <p>{{ company.StreetAddress }}</p>
+
+        <ng-template [ngIf]="company.StreetAddress2">
+          <p>{{ company.StreetAddress2 }}</p>
+        </ng-template>
+
+        <p>{{ company.City }} {{ company.State }}, {{ company.ZipCode }}</p>
+        <p>{{ company.Country }}</p>
+      </address>
     </mat-card-content>
     <mat-card-actions align="end">
       <button mat-button color="primary">Edit</button>

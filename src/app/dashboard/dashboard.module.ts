@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {StoreModule} from '@ngrx/store';
-import {MatButtonModule, MatCardModule, MatCheckboxModule} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatCheckboxModule, MatIconModule, MatListModule } from '@angular/material';
 import {DashboardComponent} from './containers/dashboard/dashboard.component';
 import {dashboard} from './reducers/dashboard.reducer';
 import {DashboardRoutingModule} from './dashboard-routing.module';
@@ -12,6 +12,8 @@ import { CompaniesComponent } from './components/companies/companies.component';
     CommonModule,
     DashboardRoutingModule,
     MatCardModule,
+    MatListModule,
+    MatIconModule,
     MatButtonModule,
     StoreModule.forFeature('dashboard', dashboard)
   ],
