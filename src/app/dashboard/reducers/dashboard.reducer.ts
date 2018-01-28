@@ -1,6 +1,5 @@
 import {IDashboardState} from '../interfaces/dashboard-state';
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {IApplicationState} from '../../core/interfaces/application-state';
 
 const initialState: IDashboardState = {
   companies: [
@@ -41,8 +40,8 @@ export function dashboard(state = initialState, action): IDashboardState {
   return state;
 }
 
-export const getDashboardState = createFeatureSelector<IDashboardState>('dashboard');
+export const dashboardState = createFeatureSelector<IDashboardState>('dashboard');
 
-export const getCompanies = (state: IDashboardState) => state.companies;
+export const getCompaniesState = (state: IDashboardState) => state.companies;
 
-export const getCompaniesState = createSelector(getDashboardState, getCompanies);
+export const getCompanies = createSelector(dashboardState, getCompaniesState);

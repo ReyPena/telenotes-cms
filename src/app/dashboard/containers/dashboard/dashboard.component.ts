@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {getCompaniesState} from '../../reducers/dashboard.reducer';
+import {getCompanies} from '../../reducers/dashboard.reducer';
 import {ICompany} from '../../interfaces/company';
 import {IDashboardState} from '../../interfaces/dashboard-state';
 
@@ -15,10 +15,9 @@ export class DashboardComponent implements OnInit {
   constructor(private readonly _store: Store<IDashboardState>) { }
 
   ngOnInit() {
-    this._store.select(getCompaniesState)
+    this._store.select(getCompanies)
       .subscribe((companiesState) => {
-        debugger;
-        this.companies = companiesState;
+          this.companies = companiesState;
       });
   }
 }

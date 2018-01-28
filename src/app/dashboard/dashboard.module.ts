@@ -15,6 +15,6 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
     MatCheckboxModule,
     StoreModule.forFeature('dashboard', dashboard)
   ],
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent]
 })
 export class DashboardModule { }
