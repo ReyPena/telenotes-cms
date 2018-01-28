@@ -1,0 +1,21 @@
+<div class="row">
+  <mat-card class="card" *ngFor="let company of companies">
+    <mat-card-header>
+      <mat-card-title>{{ company.CompanyName }}</mat-card-title>
+      <mat-card-subtitle> Company id: {{ company.CompanyID }} - Acount id: {{ company.AccountId }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ company.StreetAddress }}
+      {{ company.StreetAddress2 }}
+      {{ company.City }} {{ company.State }}, {{ company.ZipCode }}
+      {{ company.Country }}
+
+      {{ company.webSite }}
+      {{ company.status }}
+      {{ company.Type }}
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="primary">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

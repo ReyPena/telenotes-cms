@@ -5,6 +5,7 @@ import {MatButtonModule, MatCardModule, MatCheckboxModule} from '@angular/materi
 import {DashboardComponent} from './containers/dashboard/dashboard.component';
 import {dashboard} from './reducers/dashboard.reducer';
 import {DashboardRoutingModule} from './dashboard-routing.module';
+import { CompaniesComponent } from './components/companies/companies.component';
 
 @NgModule({
   imports: [
@@ -12,9 +13,8 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
     DashboardRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatCheckboxModule,
     StoreModule.forFeature('dashboard', dashboard)
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent, CompaniesComponent]
 })
 export class DashboardModule { }
