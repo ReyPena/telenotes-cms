@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  MatCardModule,
+  MatButtonModule,
+  MatCheckboxModule } from '@angular/material';
+
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+
+    MatCardModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent],
 })
 export class DashboardModule { }
