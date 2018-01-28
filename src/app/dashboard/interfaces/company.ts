@@ -1,5 +1,5 @@
 export interface ICompany {
-  CompanyID: number;
+  CompanyID?: number;
   AccountId: string;
   CompanyName: string;
   StreetAddress: string;
@@ -9,7 +9,7 @@ export interface ICompany {
   Country: string;
   ZipCode: string;
   webSite: string;
-  CreatedDate: string;
+  CreatedDate?: string;
   status: string;
   Type: string;
 }
