@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ICompany } from '../../interfaces/company';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { countries } from 'typed-countries';
 
 @Component({
@@ -31,11 +31,9 @@ export class CompanyDialogComponent implements OnInit {
 
   countriesData = countries;
 
-  constructor(
-    private readonly fb: FormBuilder,
-    private readonly _dialogRef: MatDialogRef<CompanyDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ICompany
-  ) {
+  constructor(private readonly _fb: FormBuilder,
+              private readonly _dialogRef: MatDialogRef<CompanyDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: ICompany) {
   }
 
   ngOnInit() {
@@ -47,17 +45,17 @@ export class CompanyDialogComponent implements OnInit {
   }
 
   createFrom() {
-    this.companyForm = this.fb.group({
-      companyName: [ null, Validators.required ],
-      streetAddress: [ null, Validators.required ],
-      streetAddress2: [ null, Validators.required ],
-      city: [ null, Validators.required ],
-      state: [ null, Validators.required ],
-      country: [ null, Validators.required ],
-      zipCode: [ null, Validators.required ],
-      webSite: [ null, Validators.required ],
-      status: [ null, Validators.required ],
-      type: [ null, Validators.required ]
+    this.companyForm = this._fb.group({
+      companyName: [null, Validators.required],
+      streetAddress: [null, Validators.required],
+      streetAddress2: [null, Validators.required],
+      city: [null, Validators.required],
+      state: [null, Validators.required],
+      country: [null, Validators.required],
+      zipCode: [null, Validators.required],
+      webSite: [null, Validators.required],
+      status: [null, Validators.required],
+      type: [null, Validators.required]
     });
   }
 }

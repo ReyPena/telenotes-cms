@@ -6,27 +6,30 @@
   <mat-dialog-content>
     <div class="company-form">
       <mat-form-field>
-        <input matInput placeholder="Company Name" type="text" formControlName="companyName" [(ngModel)]="company.CompanyName" />
+        <input matInput placeholder="Company Name" type="text" formControlName="companyName"
+               [(ngModel)]="company.CompanyName"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Street Address" type="text" formControlName="streetAddress" [(ngModel)]="company.StreetAddress" />
+        <input matInput placeholder="Street Address" type="text" formControlName="streetAddress"
+               [(ngModel)]="company.StreetAddress"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Street Address 2" type="text" formControlName="streetAddress2" [(ngModel)]="company.StreetAddress2" />
+        <input matInput placeholder="Street Address 2" type="text" formControlName="streetAddress2"
+               [(ngModel)]="company.StreetAddress2"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="City" type="text" formControlName="city" [(ngModel)]="company.City" />
+        <input matInput placeholder="City" type="text" formControlName="city" [(ngModel)]="company.City"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="State" type="text" formControlName="state" [(ngModel)]="company.State" />
+        <input matInput placeholder="State" type="text" formControlName="state" [(ngModel)]="company.State"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
@@ -40,22 +43,22 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Zip Code" type="text" formControlName="zipCode" [(ngModel)]="company.ZipCode" />
+        <input matInput placeholder="Zip Code" type="text" formControlName="zipCode" [(ngModel)]="company.ZipCode"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Web Site" type="text" formControlName="webSite" [(ngModel)]="company.webSite" />
+        <input matInput placeholder="Web Site" type="text" formControlName="webSite" [(ngModel)]="company.webSite"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Status" type="text" formControlName="status" [(ngModel)]="company.status" />
+        <input matInput placeholder="Status" type="text" formControlName="status" [(ngModel)]="company.status"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Type" type="text" formControlName="type" [(ngModel)]="company.Type" />
+        <input matInput placeholder="Type" type="text" formControlName="type" [(ngModel)]="company.Type"/>
         <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
       </mat-form-field>
     </div>
@@ -64,6 +67,7 @@
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
 
-    <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">Create</button> <!--TODO: Set text based on mode-->
+    <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">Create</button>
+    <!--TODO: Set text based on mode-->
   </mat-dialog-actions>
 </form>

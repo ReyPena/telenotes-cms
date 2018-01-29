@@ -1,4 +1,4 @@
-import {ICompany} from './company';
+import { ICompany } from './company';
 
 export interface IDashboardState {
   companies: ICompany[];

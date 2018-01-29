@@ -1,5 +1,5 @@
-import {IDashboardState} from '../interfaces/dashboard-state';
-import {createFeatureSelector, createSelector} from '@ngrx/store';
+import { IDashboardState } from '../interfaces/dashboard-state';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 const initialState: IDashboardState = {
   companies: [

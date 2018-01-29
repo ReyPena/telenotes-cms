@@ -9,7 +9,8 @@ import { ICompany } from '../../interfaces/company';
 export class CompaniesComponent implements OnInit {
   @Input() companies: ICompany[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

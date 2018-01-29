@@ -14,22 +14,21 @@ import { CompanyDialogComponent } from '../../components/company-dialog/company-
 export class DashboardComponent implements OnInit {
   companies: ICompany[] = [];
 
-  constructor(
-    private readonly _store: Store<IDashboardState>,
-    private readonly _dialog: MatDialog
-  ) { }
+  constructor(private readonly _store: Store<IDashboardState>,
+              private readonly _dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this._store.select(getCompanies)
       .subscribe((companiesState) => {
-          this.companies = companiesState;
+        this.companies = companiesState;
       });
   }
 
   addCompany() {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
       width: '70vw',
-      data: { } // TODO: Create enum CompanyDialogAction.Add
+      data: {} // TODO: Create enum CompanyDialogAction.Add
     });
 
     dialogRef.afterClosed()
