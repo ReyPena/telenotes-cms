@@ -5,6 +5,7 @@ import { ICompany } from '../../interfaces/company';
 import { IDashboardState } from '../../interfaces/dashboard-state';
 import { MatDialog } from '@angular/material';
 import { CompanyDialogComponent } from '../../components/company-dialog/company-dialog.component';
+import { CompanyService } from '../../services/company.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,8 +15,11 @@ import { CompanyDialogComponent } from '../../components/company-dialog/company-
 export class DashboardComponent implements OnInit {
   companies: ICompany[] = [];
 
-  constructor(private readonly _store: Store<IDashboardState>,
-              private readonly _dialog: MatDialog) {
+  constructor(
+    private readonly _company: CompanyService,
+    private readonly _store: Store<IDashboardState>,
+    private readonly _dialog: MatDialog
+  ) {
   }
 
   ngOnInit() {
@@ -35,6 +39,7 @@ export class DashboardComponent implements OnInit {
       .subscribe((company: ICompany) => {
         if (company) {
           alert(JSON.stringify(company));
+          this._company.createCompany(company);
           // TODO: this.companyService.addCompany(company);
         }
       });

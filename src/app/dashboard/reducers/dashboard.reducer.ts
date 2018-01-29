@@ -1,5 +1,6 @@
 import { IDashboardState } from '../interfaces/dashboard-state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { DashboardActions, DashboardTypes } from '../actions/dashboard.action';
 
 const initialState: IDashboardState = {
   companies: [
@@ -36,8 +37,14 @@ const initialState: IDashboardState = {
   ]
 };
 
-export function dashboard(state = initialState, action): IDashboardState {
-  return state;
+export function dashboard(state = initialState, action: DashboardActions): IDashboardState {
+  switch(action.type) {
+    // case DashboardTypes.FETCH_DATA:
+    //   return { ...state, companies: action.payload };
+    default:{
+      return state;
+    }
+  }
 }
 
 export const dashboardState = createFeatureSelector<IDashboardState>('dashboard');

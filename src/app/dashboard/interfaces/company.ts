@@ -9,7 +9,8 @@ export interface ICompany {
   Country: string;
   ZipCode: string;
   webSite: string;
-  CreatedDate?: string;
+  CreatedDate: string;
+  Contacts?: ICompany[];
   status: string;
   Type: string;
 }

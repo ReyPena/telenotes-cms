@@ -23,6 +23,7 @@ export class CompanyDialogComponent implements OnInit {
     ZipCode: '',
     webSite: '',
     CreatedDate: Date(),
+
     status: '',
     Type: ''
   };
