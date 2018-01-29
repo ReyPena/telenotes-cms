@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ICompany } from '../interfaces/company';
 import { environment } from '../../../environments/environment';
 
@@ -29,9 +29,12 @@ export class CompanyService {
   }
 
   async createCompany(company: ICompany) {
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json');
+
     try {
       await this._httpClient
-        .put(this.apiUrl, company)
+        .put(this.apiUrl, company, { headers })
         .toPromise();
     } catch (error) {
       console.log(error);

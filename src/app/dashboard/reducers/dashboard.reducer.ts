@@ -6,7 +6,7 @@ const initialState: IDashboardState = {
   companies: [
     {
       'CompanyID': 8037691,
-      'AccountId': 0,
+      'AccountId': null,
       'CompanyName': 'A&S Supply',
       'StreetAddress': '583 School Street',
       'StreetAddress2': '',
@@ -27,7 +27,7 @@ const initialState: IDashboardState = {
       'StreetAddress2': '',
       'City': 'Wantagh',
       'State': 'NY',
-      'Country': null,
+      'Country': '',
       'ZipCode': '11793',
       'webSite': 'hello.com',
       'CreatedDate': '2015-12-10T08:43:57.540',
@@ -38,7 +38,7 @@ const initialState: IDashboardState = {
 };
 
 export function dashboard(state = initialState, action: DashboardActions): IDashboardState {
-  switch(action.type) {
+  switch (action.type) {
     // case DashboardTypes.FETCH_DATA:
     //   return { ...state, companies: action.payload };
     default:{

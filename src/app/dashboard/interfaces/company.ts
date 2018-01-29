@@ -1,14 +1,14 @@
 export interface ICompany {
-  CompanyID?: number;
-  AccountId?: number;
+  CompanyID: number | null;
+  AccountId?: number | null;
   CompanyName: string;
   StreetAddress: string;
-  StreetAddress2: string;
+  StreetAddress2?: string;
   City: string;
   State: string;
   Country: string;
   ZipCode: string;
-  webSite: string;
+  webSite?: string;
   CreatedDate: string;
   Contacts?: ICompany[];
   status: string;

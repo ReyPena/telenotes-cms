@@ -12,8 +12,8 @@ import { countries } from 'typed-countries';
 export class CompanyDialogComponent implements OnInit {
 
   company: ICompany = {
-    CompanyID: 0,
-    AccountId: 0,
+    CompanyID: null,
+    AccountId: null,
     CompanyName: '',
     StreetAddress: '',
     StreetAddress2: '',
@@ -22,8 +22,8 @@ export class CompanyDialogComponent implements OnInit {
     Country: '',
     ZipCode: '',
     webSite: '',
+    Contacts: [],
     CreatedDate: Date(),
-
     status: '',
     Type: ''
   };
@@ -49,7 +49,7 @@ export class CompanyDialogComponent implements OnInit {
     this.companyForm = this._fb.group({
       companyName: [null, Validators.required],
       streetAddress: [null, Validators.required],
-      streetAddress2: [null, Validators.required],
+      streetAddress2: [null],
       city: [null, Validators.required],
       state: [null, Validators.required],
       country: [null, Validators.required],
