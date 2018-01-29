@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
-import {getCompanies} from '../../reducers/dashboard.reducer';
-import {ICompany} from '../../interfaces/company';
-import {IDashboardState} from '../../interfaces/dashboard-state';
+import { Store } from '@ngrx/store';
+import { getCompanies } from '../../reducers/dashboard.reducer';
+import { ICompany } from '../../interfaces/company';
+import { IDashboardState } from '../../interfaces/dashboard-state';
 import { MatDialog } from '@angular/material';
 import { CompanyDialogComponent } from '../../components/company-dialog/company-dialog.component';
 
@@ -28,14 +28,14 @@ export class DashboardComponent implements OnInit {
 
   addCompany() {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
-      width: '250px',
+      width: 'auto',
       data: { } // TODO: Create enum CompanyDialogAction.Add
     });
 
     dialogRef.afterClosed()
       .subscribe((company: ICompany) => {
         if (company) {
-          alert(company);
+          alert(JSON.stringify(company));
           // TODO: this.companyService.addCompany(company);
         }
       });

@@ -1,32 +1,39 @@
-<div class="row">
+<div class="card-stack">
   <mat-card class="card" *ngFor="let company of companies">
     <mat-card-header>
-      <div mat-card-avatar class="image"><!--TODO: Add placeholder--></div>
-      <mat-card-title>{{ company.CompanyName }}</mat-card-title>
+      <mat-card-title>
+        <h2>{{ company.CompanyName }}</h2>
+      </mat-card-title>
       <mat-card-subtitle>
-        <ng-template [ngIf]="company.webSite">
-          <p>Website: <a href="{{ company.webSite }}" target="_blank">{{ company.webSite }}</a></p>
-        </ng-template>
+        Company ID: {{ company.CompanyID }}
       </mat-card-subtitle>
     </mat-card-header>
+
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+
     <mat-card-content>
+      <ng-template #empty>--</ng-template>
+
+
       <p>
-        <b>Company id:</b> {{ company.CompanyID }} <br>
-        <b>Account id:</b> {{ company.AccountId }}
+        <b>Account ID:</b> {{ company.AccountId }}
       </p>
 
       <b>Address</b>
       <address>
         <p>{{ company.StreetAddress }}</p>
-
         <ng-template [ngIf]="company.StreetAddress2">
           <p>{{ company.StreetAddress2 }}</p>
         </ng-template>
-
-        <p>{{ company.City }} {{ company.State }}, {{ company.ZipCode }}</p>
-        <p>{{ company.Country }}</p>
+        <p>{{ company.City }}, {{ company.State }}, {{ company.ZipCode }}, {{ company.Country }}</p>
       </address>
+      <p>
+        <b>Website:</b> <a href="{{ company.webSite }}" target="_blank">{{ company.webSite }}</a>
+      </p>
     </mat-card-content>
+
+    <mat-divider></mat-divider>
+
     <mat-card-actions align="end">
       <button mat-button color="primary">Edit</button>
     </mat-card-actions>

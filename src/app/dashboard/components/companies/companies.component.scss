@@ -1,3 +1,11 @@
+.card-stack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .card {
-  margin-bottom: 15px;
+  width: 400px;
+  margin: 10px;
 }

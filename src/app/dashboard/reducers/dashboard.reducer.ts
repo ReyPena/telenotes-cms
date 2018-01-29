@@ -5,7 +5,7 @@ const initialState: IDashboardState = {
   companies: [
     {
       'CompanyID': 8037691,
-      'AccountId': '0',
+      'AccountId': 0,
       'CompanyName': 'A&S Supply',
       'StreetAddress': '583 School Street',
       'StreetAddress2': '',

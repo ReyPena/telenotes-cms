@@ -1,6 +1,6 @@
 export interface ICompany {
   CompanyID?: number;
-  AccountId: string;
+  AccountId?: number;
   CompanyName: string;
   StreetAddress: string;
   StreetAddress2: string;
