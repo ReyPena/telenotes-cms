@@ -30,7 +30,8 @@ export class CompanyService {
 
   async createCompany(company: ICompany) {
     const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json');
+      .set('Content-Type', 'application/json')
+      .set('Accept', 'application/json');
 
     try {
       await this._httpClient
