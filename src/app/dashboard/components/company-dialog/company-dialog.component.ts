@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ICompany } from '../../interfaces/company';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { countries } from 'typed-countries';
 
 @Component({
   selector: 'app-company-dialog',
@@ -28,15 +29,17 @@ export class CompanyDialogComponent implements OnInit {
 
   companyForm: FormGroup;
 
+  countriesData = countries;
+
   constructor(
     private readonly fb: FormBuilder,
     private readonly _dialogRef: MatDialogRef<CompanyDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ICompany
   ) {
-    this.createFrom();
   }
 
   ngOnInit() {
+    this.createFrom();
   }
 
   close() {

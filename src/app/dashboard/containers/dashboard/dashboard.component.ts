@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
 
   addCompany() {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
-      width: 'auto',
+      width: '70vw',
       data: { } // TODO: Create enum CompanyDialogAction.Add
     });
 

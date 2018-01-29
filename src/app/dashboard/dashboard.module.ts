@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import {
-  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule
+  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule, MatOptionModule, MatSelect,
+  MatSelectModule
 } from '@angular/material';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { dashboard } from './reducers/dashboard.reducer';
@@ -21,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
     ReactiveFormsModule,
     FormsModule,
     StoreModule.forFeature('dashboard', dashboard)
