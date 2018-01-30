@@ -150,6 +150,10 @@ export class CompanyService {
     const contacts: IContactDictionary = {};
 
     for (const company of companies) {
+      if (company === null) {
+        continue;
+      }
+
       contacts[company.CompanyID] = company.Contacts;
     }
 
