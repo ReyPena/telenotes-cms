@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>
   Create new company
 </h2> <!--TODO: Set title based on mode-->
-
+{{ this.company | json}}
 <form [formGroup]="companyForm" novalidate>
   <mat-dialog-content>
     <div class="company-form">
@@ -55,9 +55,15 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Status" type="text" autocomplete="off" formControlName="status"
-               [(ngModel)]="company.status"/>
-        <mat-error *ngIf="companyForm.invalid">Status is required</mat-error>
+        <mat-select formControlName="status" [(ngModel)]="company.status">
+          <mat-option value="Distributor">
+            Distributor
+          </mat-option>
+          <mat-option value="End User">
+            End User
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="companyForm.invalid">Status is required please select one</mat-error>
       </mat-form-field>
 
       <mat-form-field>

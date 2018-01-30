@@ -22,8 +22,8 @@ export class CompanyDialogComponent implements OnInit {
     Country: '',
     ZipCode: '',
     webSite: '',
-    Contacts: [],
     CreatedDate: Date(),
+    Contacts: [],
     status: '',
     Type: ''
   };

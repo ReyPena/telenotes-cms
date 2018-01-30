@@ -1,6 +1,8 @@
+import { IContacts } from './contacts';
+
 export interface ICompany {
   CompanyID: number | null;
-  AccountId?: number | null;
+  AccountId: number | null;
   CompanyName: string;
   StreetAddress: string;
   StreetAddress2?: string;
@@ -10,7 +12,7 @@ export interface ICompany {
   ZipCode: string;
   webSite?: string;
   CreatedDate: string;
-  Contacts?: ICompany[];
+  Contacts?: IContacts[];
   status: string;
   Type: string;
 }
