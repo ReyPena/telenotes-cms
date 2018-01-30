@@ -6,30 +6,32 @@
   <mat-dialog-content>
     <div class="company-form">
       <mat-form-field>
-        <input matInput placeholder="Company Name" type="text" formControlName="companyName"
+        <input matInput placeholder="Company Name" type="text" autocomplete="off" formControlName="companyName"
                [(ngModel)]="company.CompanyName"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <mat-error *ngIf="companyForm.invalid">Please set a company name</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Street Address" type="text" formControlName="streetAddress"
+        <input matInput placeholder="Street Address" type="text" autocomplete="off" formControlName="streetAddress"
                [(ngModel)]="company.StreetAddress"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <mat-error *ngIf="companyForm.invalid">Please add your company street address</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Street Address 2" type="text" formControlName="streetAddress2"
+        <input matInput placeholder="Street Address 2" type="text" autocomplete="off" formControlName="streetAddress2"
                [(ngModel)]="company.StreetAddress2"/>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="City" type="text" formControlName="city" [(ngModel)]="company.City"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <input matInput placeholder="City" type="text" autocomplete="off" formControlName="city"
+               [(ngModel)]="company.City"/>
+        <mat-error *ngIf="companyForm.invalid">Please add city</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="State" type="text" formControlName="state" [(ngModel)]="company.State"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <input matInput placeholder="State" type="text" autocomplete="off" formControlName="state"
+               [(ngModel)]="company.State"/>
+        <mat-error *ngIf="companyForm.invalid">Please add your city state</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -38,27 +40,30 @@
             {{ country.name }}
           </mat-option>
         </mat-select>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <mat-error *ngIf="companyForm.invalid">Country is required please select one</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Zip Code" type="text" formControlName="zipCode" [(ngModel)]="company.ZipCode"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <input matInput placeholder="Zip Code" type="text" autocomplete="off" formControlName="zipCode"
+               [(ngModel)]="company.ZipCode"/>
+        <mat-error *ngIf="companyForm.invalid">Pleas add the zip code</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Web Site" type="text" formControlName="webSite" [(ngModel)]="company.webSite"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <input matInput placeholder="Web Site" type="text" autocomplete="off" formControlName="webSite"
+               [(ngModel)]="company.webSite"/>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Status" type="text" formControlName="status" [(ngModel)]="company.status"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <input matInput placeholder="Status" type="text" autocomplete="off" formControlName="status"
+               [(ngModel)]="company.status"/>
+        <mat-error *ngIf="companyForm.invalid">Status is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Type" type="text" formControlName="type" [(ngModel)]="company.Type"/>
-        <mat-error *ngIf="companyForm.invalid">This field is required</mat-error>
+        <input matInput placeholder="Type" type="text" autocomplete="off" formControlName="type"
+               [(ngModel)]="company.Type"/>
+        <mat-error *ngIf="companyForm.invalid">Type required</mat-error>
       </mat-form-field>
     </div>
   </mat-dialog-content>

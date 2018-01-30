@@ -54,7 +54,7 @@ export class CompanyDialogComponent implements OnInit {
       state: [null, Validators.required],
       country: [null, Validators.required],
       zipCode: [null, Validators.required],
-      webSite: [null, Validators.required],
+      webSite: [null],
       status: [null, Validators.required],
       type: [null, Validators.required]
     });
