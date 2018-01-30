@@ -25,7 +25,7 @@
       <mat-form-field>
         <input matInput placeholder="City" type="text" autocomplete="off" formControlName="city"
                [(ngModel)]="company.City"/>
-        <mat-error *ngIf="companyForm.invalid">Please add city</mat-error>
+        <mat-error *ngIf="companyForm.invalid">Please add a city</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -69,9 +69,9 @@
   </mat-dialog-content>
 
   <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-dialog-close>CANCEL</button>
 
-    <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">Create</button>
+    <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">CREATE</button>
     <!--TODO: Set text based on mode-->
   </mat-dialog-actions>
 </form>
