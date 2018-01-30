@@ -24,6 +24,7 @@ export class CompanyDialogComponent implements OnInit {
     Country: this.data.Country || '',
     ZipCode: this.data.ZipCode || '',
     webSite: this.data.webSite || '',
+    Contacts: [],
     CreatedDate: this.data.CreatedDate || Date(),
     status: this.data.status || '',
     Type: this.data.Type || ''
