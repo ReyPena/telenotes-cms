@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed()
       .subscribe((company: ICompany) => {
         if (company) {
-          this._company.createCompany(company);
+          this._companyService.createCompany(company);
         }
       });
   }
