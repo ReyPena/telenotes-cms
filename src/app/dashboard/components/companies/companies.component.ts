@@ -3,7 +3,6 @@ import { ICompany } from '../../interfaces/company';
 import { CompanyDialogComponent } from '../company-dialog/company-dialog.component';
 import { MatDialog } from '@angular/material';
 import { CompanyService } from '../../services/company.service';
-import { CompanyDialogTypes } from '../../actions';
 
 @Component({
   selector: 'app-companies',

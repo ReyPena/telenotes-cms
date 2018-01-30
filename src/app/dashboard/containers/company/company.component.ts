@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getContacts } from '../../reducers/dashboard.reducer';
-import { IContact, IDashboardState } from '../../interfaces';
+import { IDashboardState } from '../../interfaces';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

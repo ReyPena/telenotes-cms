@@ -6,7 +6,6 @@ import { IDashboardState } from '../../interfaces/dashboard-state';
 import { MatDialog } from '@angular/material';
 import { CompanyDialogComponent } from '../../components/company-dialog/company-dialog.component';
 import { CompanyService } from '../../services/company.service';
-import { CompanyDialogTypes } from '../../actions';
 
 @Component({
   selector: 'app-dashboard',
