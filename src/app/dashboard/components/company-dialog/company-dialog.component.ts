@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ICompany } from '../../interfaces/company';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { countries } from 'typed-countries';
+import * as uuidv1 from 'uuid/v1';
 
 @Component({
   selector: 'app-company-dialog',
@@ -12,8 +13,8 @@ import { countries } from 'typed-countries';
 export class CompanyDialogComponent implements OnInit {
 
   company: ICompany = {
-    CompanyID: null,
-    AccountId: null,
+    CompanyID: Math.floor(10000000 + Math.random() * 90000000 + new Date().getMilliseconds()),
+    AccountId: uuidv1(),
     CompanyName: '',
     StreetAddress: '',
     StreetAddress2: '',

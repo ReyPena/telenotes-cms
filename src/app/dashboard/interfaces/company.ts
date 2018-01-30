@@ -2,7 +2,7 @@ import { IContacts } from './contacts';
 
 export interface ICompany {
   CompanyID: number | null;
-  AccountId: number | null;
+  AccountId: string;
   CompanyName: string;
   StreetAddress: string;
   StreetAddress2?: string;

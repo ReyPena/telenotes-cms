@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICompany } from '../../interfaces/company';
+import { CompanyDialogComponent } from '../company-dialog/company-dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-companies',
@@ -9,10 +11,18 @@ import { ICompany } from '../../interfaces/company';
 export class CompaniesComponent implements OnInit {
   @Input() companies: ICompany[];
 
-  constructor() {
+  constructor(private readonly _dialog: MatDialog
+  ) {
   }
 
   ngOnInit() {
   }
 
+  editCompany(company) {
+    console.log(company)
+    const dialogRef = this._dialog.open(CompanyDialogComponent, {
+      width: '70vw',
+      data: company
+    });
+  }
 }
