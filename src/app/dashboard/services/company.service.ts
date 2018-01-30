@@ -40,7 +40,9 @@ export class CompanyService {
         .get<ICompany[]>(API_URL)
         .toPromise();
 
-      this._store.dispatch(new SetCompanies(companies));
+      const normalizedCompanies = this._normalizeCompanies(companies);
+
+      this._store.dispatch(new SetCompanies(normalizedCompanies));
     } catch (error) {
       console.error(error);
     }
@@ -85,6 +87,50 @@ export class CompanyService {
         .toPromise();
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  /**
+   * Normalizes collection of companies and initializes
+   * unavailable values to their defaults.
+   *
+   * @param {ICompany[]} companies
+   * @return {ICompany[]}
+   * @private
+   */
+  private _normalizeCompanies(companies: ICompany[]) {
+    return companies
+      .map<ICompany>(this._normalizeCompany)
+      .filter(company => company !== null);
+  }
+
+  /**
+   * Normalizes given company and initializes undefined
+   * values to its defaults.
+   *
+   * @param {ICompany} company
+   * @returns {ICompany}
+   * @private
+   */
+  private _normalizeCompany(company: ICompany): ICompany {
+    if (company === null) {
+      return null;
+    }
+
+    return {
+      AccountId: company.AccountId || null,
+      City: company.City || '',
+      CompanyID: company.CompanyID || null,
+      CompanyName: company.CompanyName || '',
+      Country: company.Country || '',
+      State: company.State || '',
+      StreetAddress: company.StreetAddress || '',
+      StreetAddress2: company.StreetAddress2 || '',
+      Type: company.Type || '',
+      status: company.status || '',
+      webSite: company.webSite || '',
+      ZipCode: company.webSite || '',
+      CreatedDate: company.CreatedDate || ''
     }
   }
 }
