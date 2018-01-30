@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed()
       .subscribe((company: ICompany) => {
         if (company) {
-          alert(JSON.stringify(company));
+          // alert(JSON.stringify(company));
           this._company.createCompany(company);
           // TODO: this.companyService.addCompany(company);
         }

@@ -35,7 +35,7 @@ export class CompanyService {
 
     try {
       await this._httpClient
-        .put(this.apiUrl, company, { headers })
+        .post(this.apiUrl, company, { headers })
         .toPromise();
     } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ export class CompanyService {
   async  deleteRecord(company) {
     try {
       await this._httpClient
-        .delete(this.apiUrl, company)
+        .delete(`${this.apiUrl}/${company.CompanyID}`, company)
         .toPromise();
     } catch (error) {
       console.log(error);
