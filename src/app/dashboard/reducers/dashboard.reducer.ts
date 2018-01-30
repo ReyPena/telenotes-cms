@@ -1,13 +1,14 @@
-import { IDashboardState } from '../interfaces/dashboard-state';
+import { ICompany, IContact, IContactDictionary, IDashboardState } from '../interfaces';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { DashboardActions, DashboardTypes } from '../actions/dashboard.action';
+import { DashboardActions, DashboardTypes } from '../actions';
 
 /**
  * Initial state.
  * @type {{companies: ICompany[]}}
  */
 const initialState: IDashboardState = {
-  companies: []
+  companies: [],
+  contacts: {}
 };
 
 /**
@@ -27,7 +28,13 @@ export function dashboard(
     case DashboardTypes.SET_COMPANIES: {
       return {
         ...state,
-        companies: payload
+        companies: payload as ICompany[]
+      };
+    }
+    case DashboardTypes.SET_CONTACTS: {
+      return {
+        ...state,
+        contacts: payload as IContactDictionary
       };
     }
     default: {
