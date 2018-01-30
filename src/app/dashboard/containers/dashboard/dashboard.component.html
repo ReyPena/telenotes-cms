@@ -1,5 +1,11 @@
-<button mat-raised-button class="btn-dashboard" color="accent" (click)="addCompany()">
-  <mat-icon>add</mat-icon>
-  ADD COMPANY
-</button>
+<mat-toolbar color="primary">
+  Company Management by Reynaldo Pena
+
+  <div class="spacer"></div>
+
+  <button mat-button (click)="addCompany()">
+    ADD COMPANY
+  </button>
+</mat-toolbar>
+
 <app-companies [companies]="companies"></app-companies>

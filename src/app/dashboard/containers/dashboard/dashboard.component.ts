@@ -16,13 +16,17 @@ export class DashboardComponent implements OnInit {
   companies: ICompany[] = [];
 
   constructor(
-    private readonly _company: CompanyService,
+    private readonly _companyService: CompanyService,
     private readonly _store: Store<IDashboardState>,
     private readonly _dialog: MatDialog
-  ) {
-  }
+  ) { }
 
+  /**
+   * Lifecycle hook.
+   */
   ngOnInit() {
+    this._companyService.loadCompanies();
+
     this._store.select(getCompanies)
       .subscribe((companiesState) => {
         this.companies = companiesState;

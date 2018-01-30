@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import {
-  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule, MatOptionModule, MatSelectModule
+  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule, MatOptionModule, MatSelectModule,
+  MatToolbarModule
 } from '@angular/material';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { dashboard } from './reducers/dashboard.reducer';
@@ -22,6 +23,7 @@ import { CompanyService } from './services/company.service';
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
+    MatToolbarModule,
     MatDialogModule,
     MatInputModule,
     MatSelectModule,
