@@ -1,4 +1,4 @@
-export const enum CompanyDialogAction {
-  Add,
-  Edit
+export const enum CompanyDialogTypes {
+  ADD,
+  EDIT
 }

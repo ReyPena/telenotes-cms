@@ -1,6 +1,8 @@
 <h2 mat-dialog-title>
-  Create new company
-</h2> <!--TODO: Set title based on mode-->
+  <ng-template [ngIf]="addMode" [ngIfElse]="Edit">Create new company</ng-template>
+  <ng-template #Edit>Edit company</ng-template>
+</h2>
+
 {{ this.company | json}}
 <form [formGroup]="companyForm" novalidate>
   <mat-dialog-content>
@@ -75,9 +77,15 @@
   </mat-dialog-content>
 
   <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>CANCEL</button>
+    <ng-template [ngIf]="addMode" [ngIfElse]="EditAction">
+      <button mat-button mat-dialog-close>CANCEL</button>
 
-    <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">CREATE</button>
-    <!--TODO: Set text based on mode-->
+      <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">CREATE</button>
+    </ng-template>
+    <ng-template #EditAction>
+      <button mat-raised-button color="warn">DELETE</button>
+
+      <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">SAVE</button>
+    </ng-template>
   </mat-dialog-actions>
 </form>

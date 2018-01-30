@@ -6,6 +6,7 @@ import { IDashboardState } from '../../interfaces/dashboard-state';
 import { MatDialog } from '@angular/material';
 import { CompanyDialogComponent } from '../../components/company-dialog/company-dialog.component';
 import { CompanyService } from '../../services/company.service';
+import { CompanyDialogTypes } from '../../actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -36,13 +37,13 @@ export class DashboardComponent implements OnInit {
   addCompany() {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
       width: '70vw',
-      data: {} // TODO: Create enum CompanyDialogAction.Add
+      data: {}
     });
 
     dialogRef.afterClosed()
       .subscribe((company: ICompany) => {
         if (company) {
-          this._company.createCompany(company);
+          this._companyService.createCompany(company);
         }
       });
   }

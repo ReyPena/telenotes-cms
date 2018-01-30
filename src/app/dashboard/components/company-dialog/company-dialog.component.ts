@@ -11,22 +11,22 @@ import * as uuidv1 from 'uuid/v1';
   styleUrls: ['./company-dialog.component.scss']
 })
 export class CompanyDialogComponent implements OnInit {
+  addMode: boolean = Object.keys(this.data).length === 0 ? true : false;
 
   company: ICompany = {
-    CompanyID: Math.floor(10000000 + Math.random() * 90000000 + new Date().getMilliseconds()),
-    AccountId: uuidv1(),
-    CompanyName: '',
-    StreetAddress: '',
-    StreetAddress2: '',
-    City: '',
-    State: '',
-    Country: '',
-    ZipCode: '',
-    webSite: '',
-    CreatedDate: Date(),
-    Contacts: [],
-    status: '',
-    Type: ''
+    CompanyID: this.data.CompanyID || Math.floor(10000000 + Math.random() * 90000000),
+    AccountId: this.data.AccountId || uuidv1(),
+    CompanyName: this.data.CompanyName || '',
+    StreetAddress: this.data.StreetAddress || '',
+    StreetAddress2: this.data.StreetAddress2 || '',
+    City: this.data.City || '',
+    State: this.data.State || '',
+    Country: this.data.Country || '',
+    ZipCode: this.data.ZipCode || '',
+    webSite: this.data.webSite || '',
+    CreatedDate: this.data.CreatedDate || Date(),
+    status: this.data.status || '',
+    Type: this.data.Type || ''
   };
 
   companyForm: FormGroup;
@@ -39,6 +39,7 @@ export class CompanyDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this);
     this.createFrom();
   }
 

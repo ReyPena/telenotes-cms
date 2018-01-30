@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ICompany } from '../../interfaces/company';
 import { CompanyDialogComponent } from '../company-dialog/company-dialog.component';
 import { MatDialog } from '@angular/material';
+import { CompanyService } from '../../services/company.service';
+import { CompanyDialogTypes } from '../../actions';
 
 @Component({
   selector: 'app-companies',
@@ -11,18 +13,24 @@ import { MatDialog } from '@angular/material';
 export class CompaniesComponent implements OnInit {
   @Input() companies: ICompany[];
 
-  constructor(private readonly _dialog: MatDialog
+  constructor(private readonly _dialog: MatDialog,
+              private readonly _companyService: CompanyService
   ) {
   }
 
   ngOnInit() {
   }
 
-  editCompany(company) {
-    console.log(company)
+  editCompany(data) {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
       width: '70vw',
-      data: company
+      data
+    });
+
+    dialogRef.afterClosed().subscribe((company: ICompany) => {
+      if (company) {
+        this._companyService.updateCompany(company);
+      }
     });
   }
 }
