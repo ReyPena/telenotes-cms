@@ -43,7 +43,7 @@ export class CompanyDialogComponent implements OnInit {
     this.createFrom();
   }
 
-  close() {
+  close(action) {
     this._dialogRef.close(this.company);
   }
 

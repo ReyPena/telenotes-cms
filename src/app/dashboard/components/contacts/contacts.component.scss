@@ -1,0 +1,14 @@
+.accordion-group {
+  margin-top: 20px;
+}
+
+.panel-stack {
+  width: 80vw;
+  margin: 0  auto;
+}
+
+.panel-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

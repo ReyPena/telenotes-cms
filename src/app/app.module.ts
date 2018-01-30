@@ -7,7 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
-import { MatToolbarModule } from '@angular/material';
+import { MatIconModule, MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     StoreModule.forRoot({}),
     !environment.production ? StoreDevtoolsModule.instrument({maxAge: 10}) : [],
     MatToolbarModule,
+    MatIconModule,
     DashboardModule
   ],
   providers: [],

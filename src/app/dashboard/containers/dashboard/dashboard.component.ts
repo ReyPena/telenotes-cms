@@ -16,11 +16,10 @@ import { CompanyDialogTypes } from '../../actions';
 export class DashboardComponent implements OnInit {
   companies: ICompany[] = [];
 
-  constructor(
-    private readonly _companyService: CompanyService,
-    private readonly _store: Store<IDashboardState>,
-    private readonly _dialog: MatDialog
-  ) { }
+  constructor(private readonly _companyService: CompanyService,
+              private readonly _store: Store<IDashboardState>,
+              private readonly _dialog: MatDialog) {
+  }
 
   /**
    * Lifecycle hook.
@@ -43,7 +42,9 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed()
       .subscribe((company: ICompany) => {
         if (company) {
-          this._companyService.createCompany(company);
+          this._companyService.createCompany(company).then(() => {
+            this._companyService.loadCompanies();
+          });
         }
       });
   }

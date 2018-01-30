@@ -77,14 +77,12 @@
   </mat-dialog-content>
 
   <mat-dialog-actions align="end">
-    <ng-template [ngIf]="addMode" [ngIfElse]="EditAction">
-      <button mat-button mat-dialog-close>CANCEL</button>
+    <button mat-button mat-dialog-close>CANCEL</button>
 
+    <ng-template [ngIf]="addMode" [ngIfElse]="EditAction">
       <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">CREATE</button>
     </ng-template>
     <ng-template #EditAction>
-      <button mat-raised-button color="warn">DELETE</button>
-
       <button mat-raised-button color="primary" (click)="close()" [disabled]="!companyForm.valid">SAVE</button>
     </ng-template>
   </mat-dialog-actions>

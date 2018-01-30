@@ -72,7 +72,8 @@ export class CompanyService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     try {
-      await this._httpClient.put(API_URL, company, { headers }).toPromise();
+      await this._httpClient.put(API_URL, company, { headers })
+        .toPromise();
     } catch (error) {
       console.error(error);
     }
@@ -84,13 +85,14 @@ export class CompanyService {
    * @param {string} companyId
    * @returns {Promise<void>}
    */
-  async deleteCompany(companyId: string) {
+  async deleteCompany(companyId: number) {
+    console.log(companyId);
     try {
       await this._httpClient
         .delete(`${API_URL}/${companyId}`)
         .toPromise();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 

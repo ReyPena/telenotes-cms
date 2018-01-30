@@ -1,8 +1,10 @@
 <div class="card-stack">
   <mat-card class="card" *ngFor="let company of companies">
     <mat-card-header>
-      <mat-card-title>
-        <h2>{{ company.CompanyName }}</h2>
+      <mat-card-title (click)="goToContacts">
+        <a routerLink="/company/{{company.CompanyID}}">
+          <h2>{{ company.CompanyName }}</h2>
+        </a>
       </mat-card-title>
       <mat-card-subtitle>
         Company ID: {{ company.CompanyID }}
@@ -30,6 +32,7 @@
     <mat-divider></mat-divider>
 
     <mat-card-actions align="end">
+      <button mat-button color="warn" (click)="removeCompany(company.CompanyID)">DELETE</button>
       <button mat-button color="primary" (click)="editCompany(company)">EDIT</button>
     </mat-card-actions>
   </mat-card>

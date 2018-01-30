@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import {
-  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule, MatOptionModule, MatSelectModule,
+  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatIconModule, MatInputModule, MatOptionModule,
+  MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
@@ -12,6 +13,8 @@ import { CompaniesComponent } from './components/companies/companies.component';
 import { CompanyDialogComponent } from './components/company-dialog/company-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanyService } from './services/company.service';
+import { CompanyComponent } from './containers/company/company.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   imports: [
@@ -28,13 +31,14 @@ import { CompanyService } from './services/company.service';
     MatInputModule,
     MatSelectModule,
     MatOptionModule,
+    MatExpansionModule,
     StoreModule.forFeature('dashboard', dashboard)
   ],
   providers: [ CompanyService ],
   entryComponents: [
     CompanyDialogComponent
   ],
-  declarations: [DashboardComponent, CompaniesComponent, CompanyDialogComponent]
+  declarations: [DashboardComponent, CompaniesComponent, CompanyDialogComponent, CompanyComponent, ContactsComponent]
 })
 export class DashboardModule {
 }

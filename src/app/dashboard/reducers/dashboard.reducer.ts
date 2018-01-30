@@ -62,3 +62,18 @@ export const getCompaniesState = (state: IDashboardState) => state.companies;
  * @type {MemoizedSelector<object, ICompany[]>}
  */
 export const getCompanies = createSelector(dashboardState, getCompaniesState);
+
+
+/**
+ * Getter for contacts state piece from dashboard state.
+ *
+ * @param {IDashboardState} state
+ * @returns {IContact[]}
+ */
+export const getContactsState = (state: IDashboardState) => state.contacts;
+
+/**
+ * Creates selector for contacts state piece.
+ * @type {MemoizedSelector<object, IContact[]>}
+ */
+export const getContacts = createSelector(dashboardState, getContactsState);

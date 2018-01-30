@@ -21,6 +21,11 @@ export class CompaniesComponent implements OnInit {
   ngOnInit() {
   }
 
+  removeCompany(id) {
+    this._companyService.deleteCompany(id);
+    // this._companyService.loadCompanies();
+  }
+
   editCompany(data) {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
       width: '70vw',
