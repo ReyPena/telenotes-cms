@@ -1,4 +1,7 @@
-export interface IContacts {
+/**
+ * Contract for contact.
+ */
+export interface IContact {
   ContactId: number;
   title: string;
   firstname: string;

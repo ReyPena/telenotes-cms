@@ -1,1 +1,1 @@
-export { DashboardActions, DashboardTypes, SetCompanies} from './dashboard.action';
+export { DashboardActions, DashboardTypes, SetCompanies} from './dashboard.actions';
