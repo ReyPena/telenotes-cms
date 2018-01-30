@@ -5,6 +5,8 @@ import { environment } from '../../../environments/environment';
 import { IDashboardState } from '../interfaces/dashboard-state';
 import { Store } from '@ngrx/store';
 import { SetCompanies } from '../actions';
+import { IContactDictionary } from '../interfaces';
+import { SetContacts } from '../actions/dashboard.actions';
 
 /**
  * Base api url to perform requests on.
@@ -41,8 +43,10 @@ export class CompanyService {
         .toPromise();
 
       const normalizedCompanies = this._normalizeCompanies(companies);
+      const contactsDictionary = this._createContactsDictionary(companies);
 
       this._store.dispatch(new SetCompanies(normalizedCompanies));
+      this._store.dispatch(new SetContacts(contactsDictionary));
     } catch (error) {
       console.error(error);
     }
@@ -131,6 +135,25 @@ export class CompanyService {
       webSite: company.webSite || '',
       ZipCode: company.webSite || '',
       CreatedDate: company.CreatedDate || ''
+    };
+  }
+
+  /**
+   * Creates dictionary of contacts.
+   * Pair of company Ids and its collection of contacts.
+   *
+   * @param {ICompany[]} companies
+   * @returns {IContactDictionary}
+   * @private
+   */
+  private _createContactsDictionary(companies: ICompany[]) {
+    const contacts: IContactDictionary = {};
+
+    for (const company of companies) {
+      contacts[company.CompanyID] = company.Contacts;
     }
+
+    return contacts;
   }
 }
+

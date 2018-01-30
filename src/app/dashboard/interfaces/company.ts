@@ -1,5 +1,8 @@
-import { IContacts } from './contacts';
+import { IContact } from './contact';
 
+/**
+ * Contract for a company.
+ */
 export interface ICompany {
   CompanyID: number | null;
   AccountId: number | null;
@@ -12,7 +15,14 @@ export interface ICompany {
   ZipCode: string;
   webSite?: string;
   CreatedDate: string;
-  Contacts?: IContacts[];
+
+  /**
+   * Optional, used to post to api but not in the actual store.
+   * TODO: Separate api and redux interfaces.
+   * @type {IContact[]}
+   */
+  Contacts?: IContact[];
+
   status: string;
   Type: string;
 }
