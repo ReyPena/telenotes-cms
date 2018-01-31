@@ -22,8 +22,11 @@ export class CompaniesComponent implements OnInit {
   }
 
   removeCompany(id) {
-    this._companyService.deleteCompany(id);
-    // this._companyService.loadCompanies();
+    this._companyService.deleteCompany(id).then(() => {
+      // TODO: While this is no ideal this is good enough for this project
+      this._companyService.loadCompanies();
+    });
+
   }
 
   editCompany(data) {
@@ -34,7 +37,9 @@ export class CompaniesComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((company: ICompany) => {
       if (company) {
-        this._companyService.updateCompany(company);
+        this._companyService.updateCompany(company).then(() => {
+          this._companyService.loadCompanies();
+        });
       }
     });
   }

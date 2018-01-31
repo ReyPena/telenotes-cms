@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { getContacts } from '../../reducers/dashboard.reducer';
 import { IContact, IDashboardState } from '../../interfaces';
 import { ActivatedRoute } from '@angular/router';
+import { CompanyService } from '../../services/company.service';
 
 @Component({
   selector: 'app-company',
@@ -13,7 +14,8 @@ export class CompanyComponent implements OnInit {
   company: number;
   contacts: any = [];
 
-  constructor(private readonly _store: Store<IDashboardState>,
+  constructor(private readonly _companyService: CompanyService,
+              private readonly _store: Store<IDashboardState>,
               private readonly _route: ActivatedRoute) {
   }
 
@@ -21,6 +23,8 @@ export class CompanyComponent implements OnInit {
    * Lifecycle hook.
    */
   ngOnInit() {
+    this._companyService.loadCompanies();
+
     this._route.params.subscribe((params) =>{
       this.company = params['id'];
     });

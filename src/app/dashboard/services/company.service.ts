@@ -52,10 +52,18 @@ export class CompanyService {
     }
   }
 
+  /**
+   * Update company
+   *
+   * @param {ICompany} company
+   * @returns {Promise<void>}
+   */
   async updateCompany(company: ICompany) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
     try {
       await this._httpClient
-        .post(API_URL, company)
+        .post<ICompany[]>(API_URL, company, { headers })
         .toPromise();
     } catch (error) {
       console.error(error);
@@ -72,7 +80,8 @@ export class CompanyService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     try {
-      await this._httpClient.put(API_URL, company, { headers })
+      await this._httpClient
+        .put<ICompany[]>(API_URL, company, { headers })
         .toPromise();
     } catch (error) {
       console.error(error);
@@ -86,7 +95,6 @@ export class CompanyService {
    * @returns {Promise<void>}
    */
   async deleteCompany(companyId: number) {
-    console.log(companyId);
     try {
       await this._httpClient
         .delete(`${API_URL}/${companyId}`)
