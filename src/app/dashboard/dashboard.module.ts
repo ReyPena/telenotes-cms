@@ -24,6 +24,10 @@ import { CompanyComponent } from './containers/company/company.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
 
+/**
+ * Dashboard module.
+ * Encapsulates all the dashboard functionality.
+ */
 @NgModule({
   imports: [
     CommonModule,

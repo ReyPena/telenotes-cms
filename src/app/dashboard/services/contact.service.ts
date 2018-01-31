@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Store } from '@ngrx/store';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { IDashboardState } from '../interfaces/dashboard-state';
-import { ICompany, IContact } from '../interfaces';
+import { ICompany, IContact, IDashboardState } from '../interfaces';
 
 /**
  * Base api url to perform requests on.

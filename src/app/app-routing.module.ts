@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+/**
+ * App lazy loaded routes.
+ * @type {{path: string; loadChildren: string}[]}
+ */
 const routes: Routes = [
   {
     path: '',
@@ -8,6 +12,9 @@ const routes: Routes = [
   }
 ];
 
+/**
+ * App routing module.
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

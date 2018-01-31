@@ -10,6 +10,9 @@ import { StoreModule } from '@ngrx/store';
 import { MatIconModule, MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
+/**
+ * Dashboard module.
+ */
 @NgModule({
   declarations: [
     AppComponent

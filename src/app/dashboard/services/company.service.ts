@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ICompany } from '../interfaces/company';
+import { ICompany, IContactDictionary, IDashboardState } from '../interfaces';
 import { environment } from '../../../environments/environment';
-import { IDashboardState } from '../interfaces/dashboard-state';
 import { Store } from '@ngrx/store';
 import { SetCompanies } from '../actions';
-import { IContactDictionary } from '../interfaces';
 import { SetContacts } from '../actions/dashboard.actions';
 import { getContacts } from '../reducers/dashboard.reducer';
 
