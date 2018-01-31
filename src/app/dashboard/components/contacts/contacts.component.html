@@ -32,6 +32,11 @@
         </div>
 
         <div class="group">
+          <h3>Mobile Phone:</h3>
+          <a href="tel:{{contact.MobilePhone}}">{{contact.MobilePhone}}</a>
+        </div>
+
+        <div class="group">
           <h3>Home Phone:</h3>
           <a href="tel:{{contact.HomePhone}}">{{contact.HomePhone}}</a>
         </div>
@@ -49,7 +54,7 @@
       </div>
       <mat-action-row>
         <button mat-button color="warn">DELETE</button>
-        <button mat-button color="primary">EDIT</button>
+        <button mat-button color="primary" (click)="editContact(contact)">EDIT</button>
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>

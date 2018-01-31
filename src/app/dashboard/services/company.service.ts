@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { SetCompanies } from '../actions';
 import { IContactDictionary } from '../interfaces';
 import { SetContacts } from '../actions/dashboard.actions';
+import { getContacts } from '../reducers/dashboard.reducer';
 
 /**
  * Base api url to perform requests on.
@@ -60,14 +61,18 @@ export class CompanyService {
    */
   async updateCompany(company: ICompany) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this._store.select(getContacts)
+      .subscribe((contactsState) => {
+        company["Contacts"] = contactsState[company.CompanyID];
+      });
 
-    try {
-      await this._httpClient
-        .post<ICompany[]>(API_URL, company, { headers })
-        .toPromise();
-    } catch (error) {
-      console.error(error);
-    }
+    // try {
+    //   await this._httpClient
+    //     .post<ICompany[]>(API_URL, company, { headers })
+    //     .toPromise();
+    // } catch (error) {
+    //   console.error(error);
+    // }
   }
 
   /**

@@ -34,21 +34,20 @@ export class CompanyDialogComponent implements OnInit {
 
   countriesData = countries;
 
-  constructor(private readonly _fb: FormBuilder,
-              private readonly _dialogRef: MatDialogRef<CompanyDialogComponent>,
+  constructor(private readonly _dialogRef: MatDialogRef<CompanyDialogComponent>,
+              private readonly _fb: FormBuilder,
               @Inject(MAT_DIALOG_DATA) public data: ICompany) {
   }
 
   ngOnInit() {
-    console.log(this);
-    this.createFrom();
+    this.formRules();
   }
 
-  close(action) {
+  close() {
     this._dialogRef.close(this.company);
   }
 
-  createFrom() {
+  formRules() {
     this.companyForm = this._fb.group({
       companyName: [null, Validators.required],
       streetAddress: [null, Validators.required],

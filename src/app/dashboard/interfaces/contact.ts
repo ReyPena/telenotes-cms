@@ -2,7 +2,7 @@
  * Contract for contact.
  */
 export interface IContact {
-  ContactId: number;
+  ContactId: number | null;
   title: string;
   firstname: string;
   LastName: string;

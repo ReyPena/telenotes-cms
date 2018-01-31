@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanyService } from './services/company.service';
 import { CompanyComponent } from './containers/company/company.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
 
 @NgModule({
   imports: [
@@ -41,11 +42,19 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     MatExpansionModule,
     StoreModule.forFeature('dashboard', dashboard)
   ],
-  providers: [ CompanyService ],
+  providers: [CompanyService],
   entryComponents: [
-    CompanyDialogComponent
+    CompanyDialogComponent,
+    ContactDialogComponent
   ],
-  declarations: [DashboardComponent, CompaniesComponent, CompanyDialogComponent, CompanyComponent, ContactsComponent]
+  declarations: [
+    DashboardComponent,
+    CompaniesComponent,
+    CompanyDialogComponent,
+    CompanyComponent,
+    ContactsComponent,
+    ContactDialogComponent
+  ]
 })
 export class DashboardModule {
 }
