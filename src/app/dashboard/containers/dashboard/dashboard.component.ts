@@ -15,6 +15,10 @@ import { CompanyService } from '../../services';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  /**
+   * Collection of companies.
+   * @type {ICompany[]}
+   */
   companies: ICompany[] = [];
 
   /**
@@ -43,7 +47,8 @@ export class DashboardComponent implements OnInit {
   }
 
   /**
-   * Opens add company dialog and processed its callback data to pass to service.
+   * Opens add company dialog and processed
+   * its callback data to pass to service.
    */
   async addCompany() {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
