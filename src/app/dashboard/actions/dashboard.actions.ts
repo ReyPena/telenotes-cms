@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
-import { ICompany } from '../interfaces';
-import { IContactDictionary } from '../interfaces';
+import { ICompany, IContactDictionary } from '../interfaces';
 
 /**
  * Dashboard action identifiers.
