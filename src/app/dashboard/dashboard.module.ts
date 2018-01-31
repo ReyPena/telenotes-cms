@@ -19,7 +19,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { CompaniesComponent } from './components/companies/companies.component';
 import { CompanyDialogComponent } from './components/company-dialog/company-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CompanyService } from './services/company.service';
+import { CompanyService, ContactService } from './services';
 import { CompanyComponent } from './containers/company/company.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
@@ -42,7 +42,7 @@ import { ContactDialogComponent } from './components/contact-dialog/contact-dial
     MatExpansionModule,
     StoreModule.forFeature('dashboard', dashboard)
   ],
-  providers: [CompanyService],
+  providers: [CompanyService, ContactService],
   entryComponents: [
     CompanyDialogComponent,
     ContactDialogComponent

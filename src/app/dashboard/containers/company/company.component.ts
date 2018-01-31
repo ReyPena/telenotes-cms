@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { getContacts } from '../../reducers/dashboard.reducer';
 import { IDashboardState } from '../../interfaces';
 import { ActivatedRoute } from '@angular/router';
-import { CompanyService } from '../../services/company.service';
+import { CompanyService } from '../../services';
 
 @Component({
   selector: 'app-company',
@@ -12,7 +12,7 @@ import { CompanyService } from '../../services/company.service';
 })
 export class CompanyComponent implements OnInit {
   company: number;
-  contacts: any = [];
+  contacts: any;
 
   constructor(private readonly _companyService: CompanyService,
               private readonly _store: Store<IDashboardState>,

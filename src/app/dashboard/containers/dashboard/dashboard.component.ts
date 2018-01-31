@@ -5,7 +5,7 @@ import { ICompany } from '../../interfaces/company';
 import { IDashboardState } from '../../interfaces/dashboard-state';
 import { MatDialog } from '@angular/material';
 import { CompanyDialogComponent } from '../../components/company-dialog/company-dialog.component';
-import { CompanyService } from '../../services/company.service';
+import { CompanyService } from '../../services';
 
 @Component({
   selector: 'app-dashboard',

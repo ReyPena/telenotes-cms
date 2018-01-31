@@ -61,18 +61,21 @@ export class CompanyService {
    */
   async updateCompany(company: ICompany) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
     this._store.select(getContacts)
       .subscribe((contactsState) => {
-        company["Contacts"] = contactsState[company.CompanyID];
+        company['Contacts'] = contactsState[company.CompanyID];
       });
 
-    // try {
-    //   await this._httpClient
-    //     .post<ICompany[]>(API_URL, company, { headers })
-    //     .toPromise();
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    console.log(company);
+
+    try {
+      await this._httpClient
+        .post<ICompany[]>(API_URL, company, { headers })
+        .toPromise();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   /**

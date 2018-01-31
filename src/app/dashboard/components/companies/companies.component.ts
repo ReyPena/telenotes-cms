@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ICompany } from '../../interfaces/company';
 import { CompanyDialogComponent } from '../company-dialog/company-dialog.component';
 import { MatDialog } from '@angular/material';
-import { CompanyService } from '../../services/company.service';
+import { CompanyService } from '../../services';
 
 @Component({
   selector: 'app-companies',

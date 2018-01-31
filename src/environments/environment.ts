@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  url: '/api/data/reynaldo'
+  url: '/api/data/test'
 };
