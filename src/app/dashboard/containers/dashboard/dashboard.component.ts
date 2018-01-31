@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getCompanies } from '../../reducers/dashboard.reducer';
-import { ICompany } from '../../interfaces/company';
-import { IDashboardState } from '../../interfaces/dashboard-state';
+import { ICompany, IDashboardState } from '../../interfaces';
 import { MatDialog } from '@angular/material';
 import { CompanyDialogComponent } from '../../components/company-dialog/company-dialog.component';
 import { CompanyService } from '../../services';
 
+/**
+ * Represents the application dashboard.
+ */
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,9 +17,17 @@ import { CompanyService } from '../../services';
 export class DashboardComponent implements OnInit {
   companies: ICompany[] = [];
 
-  constructor(private readonly _companyService: CompanyService,
-              private readonly _store: Store<IDashboardState>,
-              private readonly _dialog: MatDialog) {
+  /**
+   * Constructs instance of @see {@link DashboardComponent}
+   *
+   * @param {CompanyService} _companyService
+   * @param {Store<IDashboardState>} _store
+   * @param {MatDialog} _dialog
+   */
+  constructor(
+    private readonly _companyService: CompanyService,
+    private readonly _store: Store<IDashboardState>,
+    private readonly _dialog: MatDialog) {
   }
 
   /**
@@ -32,18 +42,20 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  addCompany() {
+  /**
+   * Opens add company dialog and processed its callback data to pass to service.
+   */
+  async addCompany() {
     const dialogRef = this._dialog.open(CompanyDialogComponent, {
       width: '70vw',
       data: {}
     });
 
     dialogRef.afterClosed()
-      .subscribe((company: ICompany) => {
+      .subscribe(async (company: ICompany) => {
         if (company) {
-          this._companyService.createCompany(company).then(() => {
-            this._companyService.loadCompanies();
-          });
+          await this._companyService.createCompany(company);
+          this._companyService.loadCompanies();
         }
       });
   }
