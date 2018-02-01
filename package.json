@@ -1,6 +1,6 @@
 {
-  "name": "telenotes-project",
-  "version": "0.0.0",
+  "name": "telenotes-cms",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -10,7 +10,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "repository": "git@github.com:ReyPena/telenotes-cms.git",
+  "engines": {
+    "node": "^9.4.0"
+  },
+  "private": false,
   "dependencies": {
     "@angular/animations": "^5.2.2",
     "@angular/cdk": "^5.1.0",
