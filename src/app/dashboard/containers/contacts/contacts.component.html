@@ -3,53 +3,53 @@
     <mat-expansion-panel class="panel-stack" *ngFor="let contact of contacts">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <h3>{{contact.firstname}} {{contact.LastName}}</h3>
+          <h3>{{ contact.firstname }} {{ contact.LastName }}</h3>
         </mat-panel-title>
 
         <mat-panel-description>
-          <h4>{{contact.title}}</h4>
+          <h4>{{ contact.title }}</h4>
         </mat-panel-description>
       </mat-expansion-panel-header>
 
       <div class="panel-body">
         <div class="group">
           <h3>Birthday:</h3>
-          <p>{{contact.birthday}}</p>
+          <p>{{ contact.birthday }}</p>
         </div>
 
         <div class="group">
           <h3>Address:</h3>
           <address>
-            {{contact.ContactAddress}}
-            {{contact.Contactaddress2}}
-            {{contact.ContactCity}}, {{contact.ContactState}}, {{contact.ContactZip}}
+            {{ contact.ContactAddress }}
+            {{ contact.Contactaddress2 }}
+            {{ contact.ContactCity }}, {{ contact.ContactState }}, {{ contact.ContactZip }}
           </address>
         </div>
 
         <div class="group">
           <h3>Phone:</h3>
-          <a href="tel:{{contact.PrimaryPhone}}">{{contact.PrimaryPhone}}</a>
+          <a href="tel:{{ contact.PrimaryPhone }}">{{ contact.PrimaryPhone }}</a>
         </div>
 
         <div class="group">
           <h3>Mobile Phone:</h3>
-          <a href="tel:{{contact.MobilePhone}}">{{contact.MobilePhone}}</a>
+          <a href="tel:{{ contact.MobilePhone }}">{{ contact.MobilePhone }}</a>
         </div>
 
         <div class="group">
           <h3>Home Phone:</h3>
-          <a href="tel:{{contact.HomePhone}}">{{contact.HomePhone}}</a>
+          <a href="tel:{{ contact.HomePhone }}">{{ contact.HomePhone }}</a>
         </div>
 
         <div class="group">
           <h3>Fax:</h3>
-          <p>{{contact.fax}}</p>
+          <p>{{ contact.fax }}</p>
         </div>
 
         <div class="group">
           <h3>E-mail:</h3>
-          <a href="mailto:{{contact.email}}">{{contact.email}}</a>
-          <a href="mailto:{{contact.email2}}">{{contact.email2}}</a>
+          <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+          <a href="mailto:{{ contact.email2 }}">{{ contact.email2 }}</a>
         </div>
       </div>
       <mat-action-row>
