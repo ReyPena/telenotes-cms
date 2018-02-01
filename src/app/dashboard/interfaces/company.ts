@@ -1,11 +1,11 @@
 import { IContact } from './contact';
 
 /**
- * Contract for a company.
+ * Contract for a contacts.
  */
 export interface ICompany {
   /**
-   * The company id.
+   * The contacts id.
    * @type {number | null}
    */
   CompanyID: number | null;

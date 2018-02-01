@@ -52,7 +52,7 @@ export class CompanyService {
   }
 
   /**
-   * Update company
+   * Update contacts
    *
    * @param {ICompany} company
    * @returns {Promise<void>}
@@ -77,7 +77,7 @@ export class CompanyService {
   }
 
   /**
-   * Creates a company.
+   * Creates a contacts.
    *
    * @param {ICompany} company
    * @returns {Promise<void>}
@@ -95,7 +95,7 @@ export class CompanyService {
   }
 
   /**
-   * Deletes company.
+   * Deletes contacts.
    *
    * @param {string} companyId
    * @returns {Promise<void>}
@@ -125,7 +125,7 @@ export class CompanyService {
   }
 
   /**
-   * Normalizes given company and initializes undefined
+   * Normalizes given contacts and initializes undefined
    * values to its defaults.
    *
    * @param {ICompany} company
@@ -156,7 +156,7 @@ export class CompanyService {
 
   /**
    * Creates dictionary of contacts.
-   * Pair of company Ids and its collection of contacts.
+   * Pair of contacts Ids and its collection of contacts.
    *
    * @param {ICompany[]} companies
    * @returns {IContactDictionary}

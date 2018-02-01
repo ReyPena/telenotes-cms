@@ -20,9 +20,8 @@ import { CompaniesComponent } from './components/companies/companies.component';
 import { CompanyDialogComponent } from './components/company-dialog/company-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanyService, ContactService } from './services';
-import { CompanyComponent } from './containers/company/company.component';
-import { ContactsComponent } from './components/contacts/contacts.component';
 import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
+import { ContactsComponent } from './containers/contacts/contacts.component';
 
 /**
  * Dashboard module.
@@ -55,7 +54,6 @@ import { ContactDialogComponent } from './components/contact-dialog/contact-dial
     DashboardComponent,
     CompaniesComponent,
     CompanyDialogComponent,
-    CompanyComponent,
     ContactsComponent,
     ContactDialogComponent
   ]

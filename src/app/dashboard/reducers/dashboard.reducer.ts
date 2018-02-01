@@ -50,7 +50,7 @@ export function dashboard(
 export const dashboardState = createFeatureSelector<IDashboardState>('dashboard');
 
 /**
- * Getter for company state piece from dashboard state.
+ * Getter for contacts state piece from dashboard state.
  *
  * @param {IDashboardState} state
  * @returns {ICompany[]}

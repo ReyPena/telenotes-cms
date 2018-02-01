@@ -47,7 +47,7 @@ export class DashboardComponent implements OnInit {
   }
 
   /**
-   * Opens add company dialog and processed
+   * Opens add contacts dialog and processed
    * its callback data to pass to service.
    */
   async addCompany() {
