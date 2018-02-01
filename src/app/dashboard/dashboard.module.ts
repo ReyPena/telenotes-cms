@@ -13,15 +13,15 @@ import {
   MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
-import { DashboardComponent } from './containers/dashboard/dashboard.component';
+import { DashboardComponent } from './containers/dashboard';
 import { dashboard } from './reducers/dashboard.reducer';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { CompaniesComponent } from './components/companies/companies.component';
-import { CompanyDialogComponent } from './components/company-dialog/company-dialog.component';
+import { CompanyDialogComponent } from './components/company-dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanyService, ContactService } from './services';
-import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
-import { ContactsComponent } from './containers/contacts/contacts.component';
+import { ContactDialogComponent } from './components/contact-dialog';
+import { ContactsComponent } from './containers/contacts';
 
 /**
  * Dashboard module.

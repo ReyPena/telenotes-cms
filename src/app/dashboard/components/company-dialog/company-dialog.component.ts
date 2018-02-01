@@ -11,7 +11,12 @@ import * as uuidv1 from 'uuid/v1';
   styleUrls: ['./company-dialog.component.scss']
 })
 export class CompanyDialogComponent implements OnInit {
-  addMode: boolean = Object.keys(this.data).length === 0 ? true : false;
+  /**
+   * Decides whether to render edit or add dialog.
+   * TODO: Use CompanyDialogTypes enum.
+   * @type {boolean | boolean}
+   */
+  addMode: boolean = Object.keys(this.data).length === 0;
 
   company: ICompany = {
     CompanyID: this.data.CompanyID || Math.floor(10000000 + Math.random() * 90000000),
