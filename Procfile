@@ -1,2 +1,3 @@
-web: npm install
-web: npm start
+web: yarn install
+web: yarn run postinstall
+web: yarn run init
