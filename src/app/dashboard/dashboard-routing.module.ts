@@ -10,11 +10,20 @@ import { ContactsComponent } from './containers/contacts/contacts.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo:'companies',
+    pathMatch:'full'
+  },
+  {
+    path: 'companies',
     component: DashboardComponent
   },
   {
     path: 'contacts/:id',
     component: ContactsComponent
+  },
+  {
+    path: '**',
+    redirectTo:'companies'
   }
 ];
 

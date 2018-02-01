@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatDatepickerModule,
   MatDialogModule,
   MatDividerModule,
   MatExpansionModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatNativeDateModule,
   MatOptionModule,
   MatSelectModule,
   MatToolbarModule
@@ -43,6 +43,8 @@ import { ContactsComponent } from './containers/contacts';
     MatSelectModule,
     MatOptionModule,
     MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     StoreModule.forFeature('dashboard', dashboard)
   ],
   providers: [CompanyService, ContactService],

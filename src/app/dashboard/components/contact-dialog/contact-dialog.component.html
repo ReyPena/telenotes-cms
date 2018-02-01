@@ -4,72 +4,76 @@
 
 <form [formGroup]="contactForm" novalidate>
   <mat-dialog-content>
-    <mat-form-field>
-      <input matInput placeholder="First Name" type="text" autocomplete="off" formControlName="firstname" [(ngModel)]="contact.firstname">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Last Name" type="text" autocomplete="off" formControlName="LastName" [(ngModel)]="contact.LastName">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Title" type="text" autocomplete="off" formControlName="title" [(ngModel)]="contact.title">      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Address" type="text" autocomplete="off" formControlName="ContactAddress" [(ngModel)]="contact.ContactAddress">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Address 2" type="text" autocomplete="off" formControlName="Contactaddress2" [(ngModel)]="contact.Contactaddress2">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="City" type="text" autocomplete="off" formControlName="ContactCity" [(ngModel)]="contact.ContactCity">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="State" type="text" autocomplete="off" formControlName="ContactState" [(ngModel)]="contact.ContactState">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Zip Code" type="text" autocomplete="off" formControlName="ContactZip" [(ngModel)]="contact.ContactZip">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="ext" type="text" autocomplete="off" formControlName="ext" [(ngModel)]="contact.ext">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Primary Phone" type="text" autocomplete="off" formControlName="PrimaryPhone" [(ngModel)]="contact.PrimaryPhone">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Mobile Phone" type="text" autocomplete="off" formControlName="MobilePhone" [(ngModel)]="contact.MobilePhone">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Home Phone" type="text" autocomplete="off" formControlName="HomePhone" [(ngModel)]="contact.HomePhone">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Fax" type="text" autocomplete="off" formControlName="fax" [(ngModel)]="contact.fax">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email" type="text" autocomplete="off" formControlName="email" [(ngModel)]="contact.email">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email 2" type="text" autocomplete="off" formControlName="email2" [(ngModel)]="contact.email2">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="dept" type="text" autocomplete="off" formControlName="dept" [(ngModel)]="contact.dept">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="birthday" type="text" autocomplete="off" formControlName="birthday" [(ngModel)]="contact.birthday">
-      <mat-error>This Field is required</mat-error>
-    </mat-form-field>
+    <div class="contact-form">
+      <mat-form-field>
+        <input matInput placeholder="First Name" type="text" autocomplete="off" formControlName="firstname" [(ngModel)]="contact.firstname">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" type="text" autocomplete="off" formControlName="LastName" [(ngModel)]="contact.LastName">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Title" type="text" autocomplete="off" formControlName="title" [(ngModel)]="contact.title">      <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Address" type="text" autocomplete="off" formControlName="ContactAddress" [(ngModel)]="contact.ContactAddress">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Address 2" type="text" autocomplete="off" formControlName="Contactaddress2" [(ngModel)]="contact.Contactaddress2">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="City" type="text" autocomplete="off" formControlName="ContactCity" [(ngModel)]="contact.ContactCity">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="State" type="text" autocomplete="off" formControlName="ContactState" [(ngModel)]="contact.ContactState">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Zip Code" type="text" autocomplete="off" formControlName="ContactZip" [(ngModel)]="contact.ContactZip">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="ext" type="text" autocomplete="off" formControlName="ext" [(ngModel)]="contact.ext">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Primary Phone" type="text" autocomplete="off" formControlName="PrimaryPhone" [(ngModel)]="contact.PrimaryPhone">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Mobile Phone" type="text" autocomplete="off" formControlName="MobilePhone" [(ngModel)]="contact.MobilePhone">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Home Phone" type="text" autocomplete="off" formControlName="HomePhone" [(ngModel)]="contact.HomePhone">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Fax" type="text" autocomplete="off" formControlName="fax" [(ngModel)]="contact.fax">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" type="text" autocomplete="off" formControlName="email" [(ngModel)]="contact.email">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email 2" type="text" autocomplete="off" formControlName="email2" [(ngModel)]="contact.email2">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="dept" type="text" autocomplete="off" formControlName="dept" [(ngModel)]="contact.dept">
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="birthday" type="text" autocomplete="off" [matDatepicker]="myDatepicker" formControlName="birthday" [(ngModel)]="contact.birthday">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+        <mat-error>This Field is required</mat-error>
+      </mat-form-field>
+    </div>
   </mat-dialog-content>
 
   <mat-dialog-actions align="end">
