@@ -1,5 +1,5 @@
 # Telenotes CMS test  by Reynaldo Pena
-I have use angular 4 and 5 as a hobby, it was nice to test, and learn more about this powerful framework. I enjoy creating this mini spa with angular using as well redux.
+I have used angular 4 and 5 as a hobby, it was nice to test, and learn more about this powerful framework. I enjoy creating this mini spa with angular using as well redux.
 
 ![Preview](/screenshots/cover.jpg?raw=true "Preview")
 
