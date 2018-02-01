@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { getCompanies } from '../../reducers/dashboard.reducer';
 import { ICompany, IDashboardState } from '../../interfaces';
 import { MatDialog } from '@angular/material';
-import { CompanyDialogComponent } from '../../components/company-dialog/company-dialog.component';
+import { CompanyDialogComponent } from '../../components/company-dialog';
 import { CompanyService } from '../../services';
 
 /**

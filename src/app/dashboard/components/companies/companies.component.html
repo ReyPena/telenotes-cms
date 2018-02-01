@@ -1,8 +1,8 @@
 <div class="card-stack">
   <mat-card class="card" *ngFor="let company of companies">
     <mat-card-header>
-      <mat-card-title (click)="goToContacts">
-        <a routerLink="/company/{{company.CompanyID}}">
+      <mat-card-title>
+        <a routerLink="/contacts/{{ company.CompanyID }}">
           <h2>{{ company.CompanyName }}</h2>
         </a>
       </mat-card-title>
@@ -12,9 +12,6 @@
     </mat-card-header>
 
     <mat-card-content>
-      <pre>
-        {{company | json}}
-      </pre>
       <p>
         <b>Account ID:</b> {{ company.AccountId }}
       </p>
